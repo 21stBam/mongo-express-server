@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server",
+    "debug": "nodemon  --inspect server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.14.0",
+    "mongoose": "^6.1.5"
+  },
+  "devDependencies": {
+    "axios": "^0.24.0",
+    "mongoose-seed": "^0.6.0",
+    "nodemon": "^2.0.6"
+  },
+  "author": "Obsa Aba-waji",
+  "license": "ISC"
+}
