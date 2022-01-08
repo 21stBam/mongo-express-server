@@ -13,7 +13,18 @@ function asyncHandler(cb){
 
 
 router.get("/", asyncHandler(async (req, res) => {
-    const posts = await Post.find();
+    let filter = {};
+    let limit = {};
+    if (req.query.limit) {
+        limit = {limit: req.query.limit};
+    }
+    if (req.query.first_name) {
+        filter = {...filter, first_name: req.query.first_name};
+    }
+    if (req.query.last_name) {
+        filter = {...filter, last_name: req.query.last_name};
+    }
+    const posts = await Post.find(filter, null, limit);
     return res.status(200).json({ status: true, data: posts });
 }));
 
